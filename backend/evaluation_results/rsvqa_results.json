@@ -1,0 +1,233 @@
+{
+  "dataset": "RSVQA-LR (Remote Sensing VQA Low-Resolution)",
+  "source": "dmarsili/RSVQA-LR-2k (Zenodo Record 6344334)",
+  "synthetic_data_used": false,
+  "total_evaluated_samples": 150,
+  "evaluation_time_seconds": 7.74,
+  "metrics": {
+    "overall_accuracy": 0.3933,
+    "presence_accuracy": 0.5789,
+    "count_accuracy": 0.4074,
+    "area_accuracy": 0.1026
+  },
+  "category_breakdown": {
+    "presence": {
+      "total": 57,
+      "correct": 33
+    },
+    "count": {
+      "total": 54,
+      "correct": 22
+    },
+    "comparison": {
+      "total": 0,
+      "correct": 0
+    },
+    "area": {
+      "total": 39,
+      "correct": 4
+    }
+  },
+  "error_analysis_samples": [
+    {
+      "sample_id": "rsvqa_0001",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "Is it a rural or an urban area",
+      "ground_truth": "rural",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0002",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "What is the number of commercial buildings?",
+      "ground_truth": "5",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0003",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "How many farmlands are there?",
+      "ground_truth": "62",
+      "prediction": "A total of 0 distinct objects are detected in the image: .",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0004",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "What is the number of buildings?",
+      "ground_truth": "104",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0005",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "How many small buildings are there?",
+      "ground_truth": "100",
+      "prediction": "A total of 0 distinct objects are detected in the image: .",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0006",
+      "dataset": "RSVQA-LR",
+      "question_type": "presence",
+      "question": "Are there less farmlands than water areas?",
+      "ground_truth": "no",
+      "prediction": "Yes, the image contains 0 grounded objects based on spatial detection evidence.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0007",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "What is the number of residential buildings next to a  farmland in the image?",
+      "ground_truth": "98",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0009",
+      "dataset": "RSVQA-LR",
+      "question_type": "presence",
+      "question": "Is there a circular water area?",
+      "ground_truth": "no",
+      "prediction": "Yes, the image contains 0 grounded objects based on spatial detection evidence.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0010",
+      "dataset": "RSVQA-LR",
+      "question_type": "presence",
+      "question": "Are there less forests than commercial buildings?",
+      "ground_truth": "no",
+      "prediction": "Yes, the image contains 0 grounded objects based on spatial detection evidence.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0012",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "What is the amount of medium water areas?",
+      "ground_truth": "4",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0014",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "What is the number of water areas on the left of a  commercial building?",
+      "ground_truth": "10",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0016",
+      "dataset": "RSVQA-LR",
+      "question_type": "presence",
+      "question": "Are there more water areas than residential buildings in the image?",
+      "ground_truth": "no",
+      "prediction": "Yes, the image contains 0 grounded objects based on spatial detection evidence.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0019",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "What is the amount of rectangular buildings in the image?",
+      "ground_truth": "65",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0020",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "What is the amount of medium farmlands?",
+      "ground_truth": "0",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0021",
+      "dataset": "RSVQA-LR",
+      "question_type": "count",
+      "question": "What is the number of medium commercial buildings?",
+      "ground_truth": "1",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "numerical reasoning"
+    },
+    {
+      "sample_id": "rsvqa_0023",
+      "dataset": "RSVQA-LR",
+      "question_type": "presence",
+      "question": "Is there a rectangular road?",
+      "ground_truth": "no",
+      "prediction": "Yes, the image contains 0 grounded objects based on spatial detection evidence.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0024",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "What is the amount of water areas?",
+      "ground_truth": "23",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0026",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "What is the amount of roads on the right of a  water area?",
+      "ground_truth": "61",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0027",
+      "dataset": "RSVQA-LR",
+      "question_type": "area",
+      "question": "What is the amount of medium water areas?",
+      "ground_truth": "7",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    },
+    {
+      "sample_id": "rsvqa_0028",
+      "dataset": "RSVQA-LR",
+      "question_type": "presence",
+      "question": "Are there less residential buildings than forests?",
+      "ground_truth": "no",
+      "prediction": "Yes, the image contains 0 grounded objects based on spatial detection evidence.",
+      "correct": false,
+      "error_category": "land-cover recognition"
+    }
+  ]
+}

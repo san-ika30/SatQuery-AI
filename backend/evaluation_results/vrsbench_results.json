@@ -1,0 +1,220 @@
+{
+  "dataset": "VRSBench (Visual Reasoning and Segmentation Benchmark)",
+  "source": "xiang709/VRSBench (Official Hugging Face Repository)",
+  "synthetic_data_used": false,
+  "total_evaluated_samples": 150,
+  "evaluation_time_seconds": 844.91,
+  "metrics": {
+    "vqa_accuracy": 0.05,
+    "caption_keyword_recall": 0.0583,
+    "grounding_mean_iou": 0.7737,
+    "grounding_accuracy_iou50": 1.0
+  },
+  "task_breakdown": {
+    "vqa_samples": 60,
+    "caption_samples": 40,
+    "grounding_samples": 50
+  },
+  "error_analysis_samples": [
+    {
+      "sample_id": "vrs_vqa_0001",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What color are the large vehicles seen in the image?",
+      "ground_truth": "Yellow",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "object identification"
+    },
+    {
+      "sample_id": "vrs_vqa_0002",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "How many small vehicles are visible in the image?",
+      "ground_truth": "2",
+      "prediction": "There are 0 vehicles detected in the image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0003",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "Is there a vehicle located at the top-most position in the provided image?",
+      "ground_truth": "Yes",
+      "prediction": "No vehicle was detected in the given image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0004",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What is the orientation of the road in the image?",
+      "ground_truth": "North-South",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0005",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "How many vehicles are visible in the image?",
+      "ground_truth": "3",
+      "prediction": "There are 0 vehicles detected in the image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0006",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What is the position of the large vehicle in the image?",
+      "ground_truth": "middle-left",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0007",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "Is the large vehicle located near greenery?",
+      "ground_truth": "Yes",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0008",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What object class is the top-most vehicle?",
+      "ground_truth": "small-vehicle",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0009",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What object class is the bottom-most vehicle?",
+      "ground_truth": "small-vehicle",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0010",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "How many small vehicles are visible?",
+      "ground_truth": "1",
+      "prediction": "There are 0 vehicles detected in the image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0011",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What is the predominant color of the large vehicles?",
+      "ground_truth": "white",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "object identification"
+    },
+    {
+      "sample_id": "vrs_vqa_0012",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "How are the large vehicles predominantly arranged in the parking lot?",
+      "ground_truth": "in rows",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0013",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "Are there any large vehicles that are positioned away from the main cluster?",
+      "ground_truth": "yes",
+      "prediction": "No vehicle was detected in the given image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0014",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What is the orientation of the large vehicles in the parking lot?",
+      "ground_truth": "north-south",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0015",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "How many large vehicles are visible?",
+      "ground_truth": "4",
+      "prediction": "There are 0 vehicles detected in the image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0016",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "Is there a small vehicle present?",
+      "ground_truth": "Yes",
+      "prediction": "No vehicle was detected in the given image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0017",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "Where is the small vehicle located?",
+      "ground_truth": "Top-right",
+      "prediction": "Spatial locations of detected objects: .",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0018",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "What color is the parking lot?",
+      "ground_truth": "Gray",
+      "prediction": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+      "correct": false,
+      "error_category": "object identification"
+    },
+    {
+      "sample_id": "vrs_vqa_0019",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "How many large vehicles are in the image?",
+      "ground_truth": "5",
+      "prediction": "There are 0 vehicles detected in the image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    },
+    {
+      "sample_id": "vrs_vqa_0020",
+      "dataset": "VRSBench",
+      "task": "vqa",
+      "question": "Is there a small vehicle present in the image?",
+      "ground_truth": "Yes",
+      "prediction": "No vehicle was detected in the given image.",
+      "correct": false,
+      "error_category": "spatial reasoning"
+    }
+  ]
+}

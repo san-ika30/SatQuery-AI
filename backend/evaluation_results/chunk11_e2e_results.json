@@ -1,0 +1,474 @@
+[
+  {
+    "test_id": "A",
+    "test_name": "Single Image Description",
+    "query": "Describe the land-cover and major objects visible in this image.",
+    "interpreted_intent": {
+      "intent": "single_image_description",
+      "sub_intent": "scene_description",
+      "modalities": [
+        "optical"
+      ],
+      "temporal": "single",
+      "requires_grounding": false,
+      "requires_change_detection": false,
+      "requires_cross_modal": false,
+      "requires_optical_analysis": false,
+      "requires_sar_analysis": false,
+      "objects": [],
+      "confidence": 0.91,
+      "reasoning": "Query requests a comprehensive descriptive overview or natural-language caption of the satellite scene."
+    },
+    "selected_tools": [
+      "satellite_vlm"
+    ],
+    "execution_status": "success",
+    "answer": "The satellite image was analyzed, but no distinct spatial objects were detected.",
+    "confidence": 0.88,
+    "confidence_details": {
+      "score": 0.88,
+      "label": "very_high",
+      "basis": [
+        "Satellite VLM visual reasoning engine"
+      ]
+    },
+    "execution_trace": [
+      {
+        "step": 1,
+        "action": "query_interpretation",
+        "result": "single_image_description",
+        "details": {
+          "sub_intent": "scene_description",
+          "modalities": [
+            "optical"
+          ],
+          "temporal": "single",
+          "requires_grounding": false,
+          "requires_change_detection": false,
+          "requires_cross_modal": false,
+          "objects": []
+        }
+      },
+      {
+        "step": 2,
+        "action": "input_validation",
+        "result": "passed"
+      },
+      {
+        "step": 3,
+        "action": "tool_selection",
+        "tool": "satellite_vlm",
+        "tools": [
+          "satellite_vlm"
+        ],
+        "plan_id": "plan_950ff1de",
+        "reasoning": "Single-image VLM specialist planned for scene captioning and land-cover description."
+      },
+      {
+        "step": 4,
+        "action": "tool_execution",
+        "result": "completed",
+        "executed_tools": [
+          "satellite_vlm"
+        ],
+        "failed_tools": []
+      },
+      {
+        "step": 5,
+        "action": "evidence_combination",
+        "result": "completed",
+        "claims_count": 1,
+        "confidence": 0.88
+      },
+      {
+        "step": 6,
+        "action": "answer_generation",
+        "result": "completed"
+      }
+    ],
+    "latency_ms": 17310
+  },
+  {
+    "test_id": "B",
+    "test_name": "Object Grounding",
+    "query": "Highlight the water body referred to in the query.",
+    "interpreted_intent": {
+      "intent": "object_grounding",
+      "sub_intent": "spatial_localization",
+      "modalities": [
+        "optical"
+      ],
+      "temporal": "single",
+      "requires_grounding": true,
+      "requires_change_detection": false,
+      "requires_cross_modal": false,
+      "requires_optical_analysis": false,
+      "requires_sar_analysis": false,
+      "objects": [
+        "water body",
+        "water"
+      ],
+      "confidence": 0.93,
+      "reasoning": "Query instructs spatial localization, segmentation, or bounding box detection for target scene features."
+    },
+    "selected_tools": [
+      "grounding_specialist"
+    ],
+    "execution_status": "success",
+    "answer": "Localized 1 region(s) matching 'water body water'.",
+    "confidence": 0.6,
+    "confidence_details": {
+      "score": 0.6,
+      "label": "moderate",
+      "basis": [
+        "Object Grounding DINO + SAM spatial localization"
+      ]
+    },
+    "execution_trace": [
+      {
+        "step": 1,
+        "action": "query_interpretation",
+        "result": "object_grounding",
+        "details": {
+          "sub_intent": "spatial_localization",
+          "modalities": [
+            "optical"
+          ],
+          "temporal": "single",
+          "requires_grounding": true,
+          "requires_change_detection": false,
+          "requires_cross_modal": false,
+          "objects": [
+            "water body",
+            "water"
+          ]
+        }
+      },
+      {
+        "step": 2,
+        "action": "input_validation",
+        "result": "passed"
+      },
+      {
+        "step": 3,
+        "action": "tool_selection",
+        "tool": "grounding_specialist",
+        "tools": [
+          "grounding_specialist"
+        ],
+        "plan_id": "plan_0b350001",
+        "reasoning": "Object grounding planned using Grounding DINO + SAM for 'water body water'."
+      },
+      {
+        "step": 4,
+        "action": "tool_execution",
+        "result": "completed",
+        "executed_tools": [
+          "grounding_specialist"
+        ],
+        "failed_tools": []
+      },
+      {
+        "step": 5,
+        "action": "evidence_combination",
+        "result": "completed",
+        "claims_count": 1,
+        "confidence": 0.6
+      },
+      {
+        "step": 6,
+        "action": "answer_generation",
+        "result": "completed"
+      }
+    ],
+    "latency_ms": 52425
+  },
+  {
+    "test_id": "C",
+    "test_name": "Bi-Temporal Change Analysis",
+    "query": "What changed between these two dates?",
+    "interpreted_intent": {
+      "intent": "bitemporal_change",
+      "sub_intent": "change_vqa",
+      "modalities": [
+        "optical"
+      ],
+      "temporal": "bitemporal",
+      "requires_grounding": false,
+      "requires_change_detection": true,
+      "requires_cross_modal": false,
+      "requires_optical_analysis": false,
+      "requires_sar_analysis": false,
+      "objects": [],
+      "confidence": 0.94,
+      "reasoning": "Query requests detection, quantification, or question answering regarding bi-temporal changes over time."
+    },
+    "selected_tools": [
+      "change_analyzer",
+      "satellite_vlm"
+    ],
+    "execution_status": "success",
+    "answer": "Bi-temporal change analysis indicates 56.58% scene change (significant). Primary detected changes: NVG_surface, water, trees, low_vegetation, buildings, playgrounds.",
+    "confidence": 0.94,
+    "confidence_details": {
+      "score": 0.94,
+      "label": "very_high",
+      "basis": [
+        "ChangeFormerV6 bi-temporal transformer change analysis",
+        "Satellite VLM visual reasoning engine"
+      ]
+    },
+    "execution_trace": [
+      {
+        "step": 1,
+        "action": "query_interpretation",
+        "result": "bitemporal_change",
+        "details": {
+          "sub_intent": "change_vqa",
+          "modalities": [
+            "optical"
+          ],
+          "temporal": "bitemporal",
+          "requires_grounding": false,
+          "requires_change_detection": true,
+          "requires_cross_modal": false,
+          "objects": []
+        }
+      },
+      {
+        "step": 2,
+        "action": "input_validation",
+        "result": "passed"
+      },
+      {
+        "step": 3,
+        "action": "tool_selection",
+        "tool": "change_analyzer",
+        "tools": [
+          "change_analyzer",
+          "satellite_vlm"
+        ],
+        "plan_id": "plan_dc0f25b3",
+        "reasoning": "ChangeFormer bi-temporal change detection planned with VLM reasoning for detailed question answering."
+      },
+      {
+        "step": 4,
+        "action": "tool_execution",
+        "result": "completed",
+        "executed_tools": [
+          "change_analyzer",
+          "satellite_vlm"
+        ],
+        "failed_tools": []
+      },
+      {
+        "step": 5,
+        "action": "evidence_combination",
+        "result": "completed",
+        "claims_count": 2,
+        "confidence": 0.94
+      },
+      {
+        "step": 6,
+        "action": "answer_generation",
+        "result": "completed"
+      }
+    ],
+    "latency_ms": 49015
+  },
+  {
+    "test_id": "D",
+    "test_name": "Cross-Modal Optical + SAR Analysis",
+    "query": "Use the optical and SAR images together to identify built-up and water-covered regions.",
+    "interpreted_intent": {
+      "intent": "optical_sar_crossmodal",
+      "sub_intent": "built_up_and_water",
+      "modalities": [
+        "optical",
+        "sar"
+      ],
+      "temporal": "single",
+      "requires_grounding": false,
+      "requires_change_detection": false,
+      "requires_cross_modal": true,
+      "requires_optical_analysis": true,
+      "requires_sar_analysis": true,
+      "objects": [
+        "water",
+        "built-up"
+      ],
+      "confidence": 0.95,
+      "reasoning": "Query explicitly references joint optical and SAR sensor synergy or complementary cross-modal analysis."
+    },
+    "selected_tools": [
+      "optical_sar_analyzer"
+    ],
+    "execution_status": "success",
+    "answer": "Using joint optical and SAR analysis: no significant built-up structures are detected, while no water-covered areas are present. Overall terrain is categorized as Pastures.",
+    "confidence": 0.85,
+    "confidence_details": {
+      "score": 0.85,
+      "label": "high",
+      "basis": [
+        "Cross-modal Optical + SAR dual-stream neural fusion",
+        "Mutual spatial cross-validation (specular attenuation vs double-bounce)"
+      ]
+    },
+    "execution_trace": [
+      {
+        "step": 1,
+        "action": "query_interpretation",
+        "result": "optical_sar_crossmodal",
+        "details": {
+          "sub_intent": "built_up_and_water",
+          "modalities": [
+            "optical",
+            "sar"
+          ],
+          "temporal": "single",
+          "requires_grounding": false,
+          "requires_change_detection": false,
+          "requires_cross_modal": true,
+          "objects": [
+            "water",
+            "built-up"
+          ]
+        }
+      },
+      {
+        "step": 2,
+        "action": "input_validation",
+        "result": "passed"
+      },
+      {
+        "step": 3,
+        "action": "tool_selection",
+        "tool": "optical_sar_analyzer",
+        "tools": [
+          "optical_sar_analyzer"
+        ],
+        "plan_id": "plan_ddc23e73",
+        "reasoning": "Optical + SAR dual-stream neural fusion and spatial cross-validation planned."
+      },
+      {
+        "step": 4,
+        "action": "tool_execution",
+        "result": "completed",
+        "executed_tools": [
+          "optical_sar_analyzer"
+        ],
+        "failed_tools": []
+      },
+      {
+        "step": 5,
+        "action": "evidence_combination",
+        "result": "completed",
+        "claims_count": 1,
+        "confidence": 0.85
+      },
+      {
+        "step": 6,
+        "action": "answer_generation",
+        "result": "completed"
+      }
+    ],
+    "latency_ms": 77
+  },
+  {
+    "test_id": "E",
+    "test_name": "Directional Change Quantification",
+    "query": "Has the built-up area increased, decreased, or remained unchanged?",
+    "interpreted_intent": {
+      "intent": "bitemporal_change",
+      "sub_intent": "change_vqa",
+      "modalities": [
+        "optical"
+      ],
+      "temporal": "bitemporal",
+      "requires_grounding": false,
+      "requires_change_detection": true,
+      "requires_cross_modal": false,
+      "requires_optical_analysis": false,
+      "requires_sar_analysis": false,
+      "objects": [
+        "built-up"
+      ],
+      "confidence": 0.94,
+      "reasoning": "Query requests detection, quantification, or question answering regarding bi-temporal changes over time."
+    },
+    "selected_tools": [
+      "change_analyzer",
+      "satellite_vlm"
+    ],
+    "execution_status": "success",
+    "answer": "No, the buildings area did not show an increase between T1 and T2.",
+    "confidence": 0.94,
+    "confidence_details": {
+      "score": 0.94,
+      "label": "very_high",
+      "basis": [
+        "ChangeFormerV6 bi-temporal transformer change analysis",
+        "Satellite VLM visual reasoning engine"
+      ]
+    },
+    "execution_trace": [
+      {
+        "step": 1,
+        "action": "query_interpretation",
+        "result": "bitemporal_change",
+        "details": {
+          "sub_intent": "change_vqa",
+          "modalities": [
+            "optical"
+          ],
+          "temporal": "bitemporal",
+          "requires_grounding": false,
+          "requires_change_detection": true,
+          "requires_cross_modal": false,
+          "objects": [
+            "built-up"
+          ]
+        }
+      },
+      {
+        "step": 2,
+        "action": "input_validation",
+        "result": "passed"
+      },
+      {
+        "step": 3,
+        "action": "tool_selection",
+        "tool": "change_analyzer",
+        "tools": [
+          "change_analyzer",
+          "satellite_vlm"
+        ],
+        "plan_id": "plan_9f550e1d",
+        "reasoning": "ChangeFormer bi-temporal change detection planned with VLM reasoning for detailed question answering."
+      },
+      {
+        "step": 4,
+        "action": "tool_execution",
+        "result": "completed",
+        "executed_tools": [
+          "change_analyzer",
+          "satellite_vlm"
+        ],
+        "failed_tools": []
+      },
+      {
+        "step": 5,
+        "action": "evidence_combination",
+        "result": "completed",
+        "claims_count": 2,
+        "confidence": 0.94
+      },
+      {
+        "step": 6,
+        "action": "answer_generation",
+        "result": "completed"
+      }
+    ],
+    "latency_ms": 57684
+  }
+]

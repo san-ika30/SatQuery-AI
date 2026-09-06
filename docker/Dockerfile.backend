@@ -1,0 +1,46 @@
+# ============================================================
+# SatQuery AI — Backend Dockerfile (for Hugging Face Spaces)
+# Python 3.11 + GDAL/Rasterio + FastAPI
+# ============================================================
+
+FROM python:3.11-slim
+
+# System dependencies for GDAL / Rasterio
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gdal-bin \
+    libgdal-dev \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set GDAL environment
+ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
+ENV C_INCLUDE_PATH=/usr/include/gdal
+ENV GDAL_VERSION=3.6.4
+
+WORKDIR /app
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir GDAL==$(gdal-config --version) && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Create uploads directory
+RUN mkdir -p /tmp/uploads
+
+# HuggingFace Spaces runs as non-root user 1000
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app /tmp/uploads
+USER 1000
+
+EXPOSE 7860
+
+# HuggingFace Spaces expects the app to listen on port 7860
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "1"]

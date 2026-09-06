@@ -1,0 +1,81 @@
+# ============================================================
+# SatQuery AI — Root .gitignore
+# ============================================================
+
+# ── Virtual environments ──────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Python caches & compiled files ────────────────────────────
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# ── Environment & Secrets ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Node / Next.js ────────────────────────────────────────────
+node_modules/
+.next/
+out/
+.cache/
+*.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+
+# ── Model Weights & Checkpoints ───────────────────────────────
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+checkpoints/
+backend/checkpoints/
+
+# ── Datasets & Large Archives ─────────────────────────────────
+data/
+datasets/
+dataset/
+dataset/*
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# ── Local storage (uploaded images, fallback reports) ─────────
+tmp/
+temp/
+backend/local_storage/
+local_storage/
+
+# ── Logs ──────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Editor & OS ───────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.code-workspace
+
+# ── Pytest / Coverage ─────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+*.pytest_cache

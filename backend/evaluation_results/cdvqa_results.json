@@ -1,0 +1,643 @@
+{
+  "benchmark": "CDVQA (Change Detection Visual Question Answering)",
+  "source": "Hugging Face ljx620/CDVQA / YZHJessica/CDVQA",
+  "paper": "Yuan et al. Change Detection Meets Visual Question Answering, IEEE TGRS 2022",
+  "total_samples_evaluated": 150,
+  "is_synthetic": false,
+  "overall_exact_match_accuracy": 0.0,
+  "overall_normalized_accuracy": 61.33,
+  "per_category_breakdown": {
+    "change_or_not": {
+      "total_samples": 61,
+      "correct_samples": 38,
+      "accuracy_pct": 62.3
+    },
+    "increase_or_not": {
+      "total_samples": 15,
+      "correct_samples": 10,
+      "accuracy_pct": 66.67
+    },
+    "decrease_or_not": {
+      "total_samples": 18,
+      "correct_samples": 10,
+      "accuracy_pct": 55.56
+    },
+    "smallest_change": {
+      "total_samples": 12,
+      "correct_samples": 5,
+      "accuracy_pct": 41.67
+    },
+    "largest_change": {
+      "total_samples": 12,
+      "correct_samples": 9,
+      "accuracy_pct": 75.0
+    },
+    "change_to_what": {
+      "total_samples": 13,
+      "correct_samples": 9,
+      "accuracy_pct": 69.23
+    },
+    "change_ratio": {
+      "total_samples": 19,
+      "correct_samples": 11,
+      "accuracy_pct": 57.89
+    }
+  },
+  "total_evaluation_time_sec": 238.54,
+  "avg_inference_time_sec": 1.59,
+  "error_analysis_count": 25,
+  "error_analysis_sample": [
+    {
+      "sample_id": "cdvqa_real_0001",
+      "question": "Did the regions of trees change?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0002",
+      "question": "Have the areas of low vegetation changed?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0003",
+      "question": "Have the regions of water changed?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in water areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0004",
+      "question": "Have the regions of playgrounds changed?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in playgrounds areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0006",
+      "question": "Did the areas of trees change in the pre-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0007",
+      "question": "Have the areas of low vegetation changed in the first image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0008",
+      "question": "Did the areas of water change in the pre-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in water areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0011",
+      "question": "Have the regions of trees changed in the second image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0012",
+      "question": "Did the areas of low vegetation change in the post-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0013",
+      "question": "Did the regions of water change in the post-event image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in water areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0015",
+      "question": "Have the regions of playgrounds changed in the second image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in playgrounds areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0019",
+      "question": "Did the regions of trees decrease?",
+      "ground_truth": "no",
+      "prediction": "Yes, the trees area decreased by approximately 2.1% between T1 and T2.",
+      "category": "decrease_or_not",
+      "error_type": "wrong_change_direction"
+    },
+    {
+      "sample_id": "cdvqa_real_0020",
+      "question": "Did the areas of low vegetation decrease?",
+      "ground_truth": "no",
+      "prediction": "Yes, the low_vegetation area decreased by approximately 4.5% between T1 and T2.",
+      "category": "decrease_or_not",
+      "error_type": "wrong_change_direction"
+    },
+    {
+      "sample_id": "cdvqa_real_0021",
+      "question": "Have the areas of water decreased?",
+      "ground_truth": "no",
+      "prediction": "Yes, the water area decreased by approximately 6.4% between T1 and T2.",
+      "category": "decrease_or_not",
+      "error_type": "wrong_change_direction"
+    },
+    {
+      "sample_id": "cdvqa_real_0022",
+      "question": "Have the regions of buildings decreased?",
+      "ground_truth": "yes",
+      "prediction": "No, the buildings area did not show a decrease between T1 and T2.",
+      "category": "decrease_or_not",
+      "error_type": "wrong_change_direction"
+    },
+    {
+      "sample_id": "cdvqa_real_0023",
+      "question": "What type of change is the smallest?",
+      "ground_truth": "NVG_surface",
+      "prediction": "buildings. Among detected classes, buildings exhibited the smallest area change.",
+      "category": "smallest_change",
+      "error_type": "wrong_land_cover_interpretation"
+    },
+    {
+      "sample_id": "cdvqa_real_0025",
+      "question": "What is the smallest change in the first image?",
+      "ground_truth": "NVG_surface",
+      "prediction": "buildings. Among detected classes, buildings exhibited the smallest area change.",
+      "category": "smallest_change",
+      "error_type": "wrong_land_cover_interpretation"
+    },
+    {
+      "sample_id": "cdvqa_real_0031",
+      "question": "What is the percentage of changed regions?",
+      "ground_truth": "0_to_10",
+      "prediction": "20_to_30. The total changed area corresponds to the 20 to 30% range.",
+      "category": "change_ratio",
+      "error_type": "counting_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0032",
+      "question": "What is the percentage of unchanged areas?",
+      "ground_truth": "90_to_100",
+      "prediction": "70_to_80. Approximately 70 to 80% of the imagery remained unchanged.",
+      "category": "change_ratio",
+      "error_type": "counting_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0033",
+      "question": "How much area of trees has changed in the first image?",
+      "ground_truth": "0",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0034",
+      "question": "How much area of low vegetation has changed in the pre-change image?",
+      "ground_truth": "0",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0035",
+      "question": "What is the change proportion of water in the post-event image?",
+      "ground_truth": "0",
+      "prediction": "0_to_10. The change proportion for water falls in the 0 to 10% range.",
+      "category": "change_ratio",
+      "error_type": "counting_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0049",
+      "question": "Did the areas of buildings change in the post-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in buildings areas. (Overall change: 68.8%).",
+      "category": "change_or_not",
+      "error_type": "temporal_reasoning_error"
+    },
+    {
+      "sample_id": "cdvqa_real_0053",
+      "question": "Have the areas of water increased?",
+      "ground_truth": "no",
+      "prediction": "Yes, the water area increased by approximately 3.9% between T1 and T2.",
+      "category": "increase_or_not",
+      "error_type": "wrong_change_direction"
+    },
+    {
+      "sample_id": "cdvqa_real_0057",
+      "question": "Have the areas of low vegetation decreased?",
+      "ground_truth": "yes",
+      "prediction": "No, the low_vegetation area did not show a decrease between T1 and T2.",
+      "category": "decrease_or_not",
+      "error_type": "wrong_change_direction"
+    }
+  ],
+  "sample_evaluations": [
+    {
+      "sample_id": "cdvqa_real_0000",
+      "question": "Did the areas of non-vegetated ground surface change?",
+      "ground_truth": "yes",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in NVG_surface areas. (Overall change: 56.6%).",
+      "normalized_gt": "yes",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0001",
+      "question": "Did the regions of trees change?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0002",
+      "question": "Have the areas of low vegetation changed?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0003",
+      "question": "Have the regions of water changed?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in water areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0004",
+      "question": "Have the regions of playgrounds changed?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in playgrounds areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0005",
+      "question": "Did the regions of non-vegetated ground surface change in the pre-event image?",
+      "ground_truth": "yes",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in NVG_surface areas. (Overall change: 56.6%).",
+      "normalized_gt": "yes",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0006",
+      "question": "Did the areas of trees change in the pre-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0007",
+      "question": "Have the areas of low vegetation changed in the first image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0008",
+      "question": "Did the areas of water change in the pre-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in water areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0009",
+      "question": "Have the regions of buildings changed in the first image?",
+      "ground_truth": "yes",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in buildings areas. (Overall change: 56.6%).",
+      "normalized_gt": "yes",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0010",
+      "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+      "ground_truth": "yes",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in NVG_surface areas. (Overall change: 56.6%).",
+      "normalized_gt": "yes",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0011",
+      "question": "Have the regions of trees changed in the second image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in trees areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0012",
+      "question": "Did the areas of low vegetation change in the post-change image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in low_vegetation areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0013",
+      "question": "Did the regions of water change in the post-event image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in water areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0014",
+      "question": "Did the areas of buildings change in the post-change image?",
+      "ground_truth": "yes",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in buildings areas. (Overall change: 56.6%).",
+      "normalized_gt": "yes",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0015",
+      "question": "Have the regions of playgrounds changed in the second image?",
+      "ground_truth": "no",
+      "prediction": "Yes, bi-temporal analysis indicates significant change in playgrounds areas. (Overall change: 56.6%).",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "change_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0016",
+      "question": "Did the areas of low vegetation increase?",
+      "ground_truth": "no",
+      "prediction": "No, the low_vegetation area did not show an increase between T1 and T2.",
+      "normalized_gt": "no",
+      "normalized_pred": "no",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "increase_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0017",
+      "question": "Have the regions of water increased?",
+      "ground_truth": "no",
+      "prediction": "No, the water area did not show an increase between T1 and T2.",
+      "normalized_gt": "no",
+      "normalized_pred": "no",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "increase_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0018",
+      "question": "Did the regions of playgrounds increase?",
+      "ground_truth": "no",
+      "prediction": "No, the playgrounds area did not show an increase between T1 and T2.",
+      "normalized_gt": "no",
+      "normalized_pred": "no",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "increase_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0019",
+      "question": "Did the regions of trees decrease?",
+      "ground_truth": "no",
+      "prediction": "Yes, the trees area decreased by approximately 2.1% between T1 and T2.",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "decrease_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0020",
+      "question": "Did the areas of low vegetation decrease?",
+      "ground_truth": "no",
+      "prediction": "Yes, the low_vegetation area decreased by approximately 4.5% between T1 and T2.",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "decrease_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0021",
+      "question": "Have the areas of water decreased?",
+      "ground_truth": "no",
+      "prediction": "Yes, the water area decreased by approximately 6.4% between T1 and T2.",
+      "normalized_gt": "no",
+      "normalized_pred": "yes",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "decrease_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0022",
+      "question": "Have the regions of buildings decreased?",
+      "ground_truth": "yes",
+      "prediction": "No, the buildings area did not show a decrease between T1 and T2.",
+      "normalized_gt": "yes",
+      "normalized_pred": "no",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "decrease_or_not",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0023",
+      "question": "What type of change is the smallest?",
+      "ground_truth": "NVG_surface",
+      "prediction": "buildings. Among detected classes, buildings exhibited the smallest area change.",
+      "normalized_gt": "nvg_surface",
+      "normalized_pred": "buildings",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "smallest_change",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0024",
+      "question": "What is the largest change?",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface. Bi-temporal analysis indicates NVG_surface underwent the largest change in the scene.",
+      "normalized_gt": "nvg_surface",
+      "normalized_pred": "nvg_surface",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "largest_change",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0025",
+      "question": "What is the smallest change in the first image?",
+      "ground_truth": "NVG_surface",
+      "prediction": "buildings. Among detected classes, buildings exhibited the smallest area change.",
+      "normalized_gt": "nvg_surface",
+      "normalized_pred": "buildings",
+      "exact_match": false,
+      "normalized_match": false,
+      "category": "smallest_change",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0026",
+      "question": "What type of change is the smallest in the post-change image?",
+      "ground_truth": "buildings",
+      "prediction": "buildings. Among detected classes, buildings exhibited the smallest area change.",
+      "normalized_gt": "buildings",
+      "normalized_pred": "buildings",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "smallest_change",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0027",
+      "question": "What is the largest change in the pre-change image?",
+      "ground_truth": "buildings",
+      "prediction": "buildings. Bi-temporal analysis indicates buildings underwent the largest change in the scene.",
+      "normalized_gt": "buildings",
+      "normalized_pred": "buildings",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "largest_change",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0028",
+      "question": "What is the largest change in the second image?",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface. Bi-temporal analysis indicates NVG_surface underwent the largest change in the scene.",
+      "normalized_gt": "nvg_surface",
+      "normalized_pred": "nvg_surface",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "largest_change",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    },
+    {
+      "sample_id": "cdvqa_real_0029",
+      "question": "What have the regions of non-vegetated ground surface in the pre-change image mainly changed to?",
+      "ground_truth": "buildings",
+      "prediction": "buildings. Pre-change NVG_surface regions predominantly transformed into buildings.",
+      "normalized_gt": "buildings",
+      "normalized_pred": "buildings",
+      "exact_match": false,
+      "normalized_match": true,
+      "category": "change_to_what",
+      "change_ratio": 56.58,
+      "severity": "significant"
+    }
+  ]
+}
