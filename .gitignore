@@ -46,10 +46,10 @@ checkpoints/
 backend/checkpoints/
 
 # ── Datasets & Large Archives ─────────────────────────────────
-data/
-datasets/
-dataset/
-dataset/*
+/data/
+/datasets/
+/dataset/
+!backend/datasets/
 *.zip
 *.tar
 *.tar.gz
